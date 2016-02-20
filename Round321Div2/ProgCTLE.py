@@ -15,18 +15,14 @@ for i in range(n-1):
 visited = [1]
 current = [1, (0 if l[0] == 0 else 1)]
 que = []
+firstcat = 1 if l[0] == 1 else 0
 for i in d[1]:
-    if l[0] == 1:
-        que.append([i, 1])
-    else:
-        que.append([i, 0])
+    que.append([i, firstcat])
 
 res = 0
 while len(que) > 0:
     current = que.pop(0)
-    visited.append(current)
-    if current[0] in visited:
-        continue
+    visited.append(current[0])
     if l[current[0]-1] == 1:
         current[1] += 1
         if current[1] > m:

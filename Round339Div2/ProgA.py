@@ -1,4 +1,4 @@
-l, r, k = map(int, input().split())
+terminl, r, k = map(int, input().split())
 res = []
 if k > r:
     print("-1" if l != 1 else "1")
